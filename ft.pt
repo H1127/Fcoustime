@@ -1,0 +1,12 @@
+import time
+
+def focus_timer(minutes):
+    seconds = minutes * 60
+    for i in range(seconds, 0, -1):
+        minutes, sec = divmod(i, 60)
+        timer = '{:02d}:{:02d}'.format(minutes, sec)
+        print(timer, end="\r")
+        time.sleep(1)
+    print("Time's up!")
+
+focus_timer(30) # 25分钟专注
